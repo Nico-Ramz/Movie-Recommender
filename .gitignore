@@ -1,0 +1,17 @@
+# Entorno virtual
+.venv/
+
+# IDE / proyecto
+.idea/
+.devcontainer/
+*.iml
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Datos y modelos pesados (no subir al repo)
+movies_clean.csv
+
+models/
+data/
