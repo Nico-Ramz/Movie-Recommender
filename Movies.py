@@ -116,7 +116,7 @@ if "home_select" in query_params:
 DEFAULT_MODEL_PATH = "best_model.pkl"   # <-- Debe contener la instancia ContentRecommender pickleda
 TITLE_COL = "original_title"            # Ajusta si es necesario
 OMDB_API_URL = "https://www.omdbapi.com/"
-OMDB_API_KEY = "5af5a66d"
+OMDB_API_KEY = "3530335c"
 SPECIAL_POSTERS = {
     "inception": "https://m.media-amazon.com/images/M/MV5BMjExMjkwNTQ0Nl5BMl5BanBnXkFtZTcwNTY0OTk1Mw@@._V1_.jpg",
     "the wolverine": "https://monsterzeronj.wordpress.com/wp-content/uploads/2013/12/the_wolverine_posterus.jpg?w=584",
@@ -514,7 +514,7 @@ if show_search:
         if poster_url:
             poster_col.image(poster_url, use_container_width=True, caption=chosen)
         else:
-            poster_col.caption("No encontré una imagen relacionada para este título.")
+            poster_col.caption("No encontr? una imagen relacionada para este t??tulo.")
 
         detail_fields = [
             ("Titulo", ["original_title", title_col, "title"]),
@@ -549,7 +549,6 @@ if show_search:
     if not recs.empty:
         st.subheader("Peliculas recomendadas")
         rec_titles = recs[recommender.title_col].astype(str).tolist()
-
         def _batched(seq, size):
             for i in range(0, len(seq), size):
                 yield seq[i:i + size]
@@ -565,7 +564,6 @@ if show_search:
                     poster_url=rec_poster,
                     primary_caption=rec_title,
                 )
-
     # Mostrar tabla de recomendaciones
     st.subheader(f"Recomendaciones para: {chosen}")
     st.dataframe(recs)
